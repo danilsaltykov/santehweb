@@ -34,9 +34,18 @@ li {
   list-style-type: none;
 }
 
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
 a {
   color: inherit;
   text-decoration: none;
+}
+
+input {
+  color: #fff;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -55,17 +64,15 @@ p {
 }
 
 .wrapper__header {
-  background: url("../img/Rectangle 25.png"), url("../img/image 4.png");
-  background-blend-mode: multiply;
+  background: url("../img/background.png");
   background-repeat: no-repeat;
-  background-size: 50% 100%, 50% 100%;
-  background-position: left, right;
-  transform: background(scale(-1, 1));
+  background-size: cover;
+  background-position: left;
   padding-bottom: 190px;
 }
 
 .header {
-  padding-top: 30px;
+  padding-top: 15px;
   margin-bottom: 80px;
 }
 
@@ -190,6 +197,12 @@ p {
 
 .column__figure {
   margin-right: 18.55px;
+  position: relative;
+}
+
+.column__figure img {
+  position: absolute;
+  top: 20%;
 }
 
 .column__text {
@@ -210,12 +223,37 @@ p {
 }
 
 .video__title {
-  padding-top: 67px;
+  padding-top: 0px;
   margin-bottom: 80px;
+}
+
+.video__figure {
+  width: 160px;
+  height: 175px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #24242E;
+  transform: skew(-20deg);
+  position: absolute;
+  top: 35%;
+  right: 25%;
+  font-weight: 800;
+  font-size: 60px;
+  line-height: 120%;
+  color: #fff;
+  margin-right: 50px;
+  transition: .2s ease-in;
+  cursor: pointer;
+}
+
+.video__figure:hover {
+  background-color: black;
 }
 
 .video__img {
   margin-bottom: 52px;
+  position: relative;
 }
 
 .video__button {
@@ -304,6 +342,10 @@ p {
   background-color: #fff;
   color: #000;
   padding-bottom: 100px;
+}
+
+.application_white input {
+  color: #000;
 }
 
 .application_white .application__figure, .application_white .application__img, .application__calculator .application__img {
@@ -437,10 +479,19 @@ p {
   margin-right: 50px;
   margin-bottom: 65px;
   cursor: pointer;
+  transition: .2s linear;
 }
 
 .benefits__column:nth-child(3n) {
   margin-right: 0;
+}
+
+.benefits__column:hover .benefits__img {
+  border: 5px dashed #1E489B;
+}
+
+.benefits__column:hover .svg__logo {
+  fill: #1E489B;
 }
 
 .benefits__content {
@@ -487,6 +538,13 @@ p {
   background: #353542;
 }
 
+.benefits .svg__logo {
+  filL: #9898A7;
+  transition: .2s linear;
+  width: 65px;
+  height: 55px;
+}
+
 .benefits__img {
   border: 5px dashed #353542;
   padding: 40px;
@@ -494,6 +552,7 @@ p {
   display: inline-block;
   color: #fff;
   margin-bottom: 40px;
+  transition: .2s linear;
 }
 
 .benefits__img img {
@@ -942,6 +1001,12 @@ p {
   padding-right: 45px;
   padding-bottom: 45px;
   margin-right: 30px;
+  transition: .2s linear;
+  cursor: pointer;
+}
+
+.reviews__column:hover {
+  transform: scale(1.2);
 }
 
 .reviews__image {
@@ -968,11 +1033,25 @@ p {
   align-items: center;
 }
 
+.questions__button img {
+  transition: .2s linear;
+}
+
+.questions__button.active {
+  background-color: #1E489B;
+}
+
+.questions__button.active img {
+  transform: rotate(-180deg);
+  transition: .2s linear;
+}
+
 .questions__column {
   background: #F8F8F8;
-  padding: 20px 60px 20px 40px;
+  padding: 20px 60px 10px 40px;
   position: relative;
   margin-bottom: 20px;
+  height: auto;
 }
 
 .questions__name {
@@ -986,6 +1065,9 @@ p {
   margin-top: 20px;
   line-height: 120%;
   display: none;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-out;
 }
 
 .questions__title {
@@ -1028,7 +1110,13 @@ p {
 .contacts__column {
   background-color: #F8F8F8;
   padding: 40px 140px 40px 40px;
+  cursor: pointer;
   margin-right: 30px;
+  transition: .2s linear;
+}
+
+.contacts__column:hover {
+  transform: scale(1.2);
 }
 
 .contacts__img {
